@@ -11,7 +11,7 @@ for row in rows:
 
   cities_items[city] = dict({
     ITEM_NAME: name,
-    ITEM_TIME_COST: time,
-    ITEM_VALUE: money,
-    ITEM_WEIGHT: weight
+    ITEM_TIME_COST: int(time),
+    ITEM_VALUE: int(money),
+    ITEM_WEIGHT: int(weight)
   })

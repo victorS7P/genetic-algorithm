@@ -1,18 +1,7 @@
-from travels import (
-  travels,
-  cities,
-  TRAVEL_DESTINY,
-  TRAVEL_MONEY_COST,
-  TRAVEL_TIME_COST
-)
-
-from items import (
-  cities_items,
-  ITEM_NAME,
-  ITEM_WEIGHT,
-  ITEM_VALUE,
-  ITEM_TIME_COST
-)
+from genetic_algorithm import GeneticAlgorithm
 
 if __name__ == "__main__":
+  genetic_algorithm = GeneticAlgorithm(100, 20, 10000, 50, 10)
+  genetic_algorithm.run()
+
   print('OK!')
