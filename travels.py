@@ -1,3 +1,5 @@
+import random
+
 rows = open('./data/travels.txt', 'r').read().split('\n')
 
 travels = dict()
@@ -34,3 +36,15 @@ for row in rows:
   else:
     travels[destiny] = list([inverse_col_data])
     cities.append(destiny)
+
+def get_city_random_destiny(city):
+  destinies = travels[city]
+  return travels[city][random.randint(0, len(destinies) - 1)][TRAVEL_DESTINY]
+
+def exists_travel(origin, destiny):
+  destinies = list(filter(lambda travel: travel[TRAVEL_DESTINY] == destiny, travels[origin]))
+  return True if len(destinies) > 0 else False
+
+def get_travel_details(origin, destiny):
+  destinies = list(filter(lambda travel: travel[TRAVEL_DESTINY] == destiny, travels[origin]))
+  return destinies[0]
